@@ -14,7 +14,7 @@ enum CoronaStatusType: String {
     case recovered
     
     static var caseWhereQuery: String {
-        "(Confirmed> 0) OR (Deaths>0) OR (Recovered>0)"
+        "(Confirmed> 0)"
     }
     
     static var caseOrderByFieldsQuery: String {
@@ -103,8 +103,8 @@ struct CoronaCase: Decodable {
     let state: String?
     let country: String
     let lastUpdatedAt: Date
-    let latitude: Double
-    let longitude: Double
+    let latitude: Double?
+    let longitude: Double?
     let confirmed: Int
     let deaths: Int
     let recovered: Int
